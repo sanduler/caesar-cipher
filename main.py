@@ -48,9 +48,10 @@ def decrypt(plain_text, shift_amount):
         # determine the position of the letter after the shift amount is acounted for
         new_position = position - shift_amount
         # determine a new position if the position is greater than the amount of letters
+        # zebra ejgwf, e = 5, 5 - 5 = -1
         if new_position < 0:
             # acounted for the index[0]
-            new_position = 26 - new_position
+            new_position = 26 + new_position
         # find the new letter
         new_letter = alphabet[new_position]
         # add to the black cypher text
