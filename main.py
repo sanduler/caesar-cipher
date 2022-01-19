@@ -28,9 +28,7 @@ def encrypt(plain_text, shift_amount):
         cypher_text += new_letter
     print(f"The encoded text is {cypher_text}")
 
+
 # Bug alert:  'civilization'
-
 # 3: Call the encrypt function and pass in the user inputs. Be able to test the code and encrypt a message.
-
-
 encrypt(plain_text=text, shift_amount=shift)
