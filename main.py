@@ -27,7 +27,7 @@ def caesar(plain_text, shift_amount, cipher_direction):
         # else the character is skipped and added to the cypher text
         else:
             cypher_text += character
-    print(f"The {cipher_direction} text is {cypher_text}:\n")
+    print(f"The {cipher_direction} text is:\n{cypher_text}")
 
 
 while True:
