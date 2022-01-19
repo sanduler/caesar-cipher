@@ -38,6 +38,30 @@ def encrypt(plain_text, shift_amount):
     print(f"The encoded text is {cypher_text}")
 
 
-# Bug alert:  'civilization'
-# 3: Call the encrypt function and pass in the user inputs. Be able to test the code and encrypt a message.
-encrypt(plain_text=text, shift_amount=shift)
+def decrypt(plain_text, shift_amount):
+    cypher_text = ""
+    for letter in plain_text:
+        # determine the position of the letter in the alphabet
+        position = alphabet.index(letter)
+        # determine the position of the letter after the shift amount is acounted for
+        new_position = position - shift_amount
+        # determine a new position if the position is greater than the amount of letters
+        # zebra ejgwf, e = 5, 5 - 5 = -1
+        if new_position < 0:
+            # acounted for the index[0]
+            new_position = 26 + new_position
+        # find the new letter
+        new_letter = alphabet[new_position]
+        # add to the black cypher text
+        cypher_text += new_letter
+    # print the cipher text
+    print(f"The encoded text is {cypher_text}")
+
+
+# Calls the encrypt function and pass in the user inputs. Be able to test the code and encrypt a message.
+if direction == 'encode':
+    encrypt(plain_text=text, shift_amount=shift)
+elif direction == 'decode':
+    decrypt(plain_text=text, shift_amount=shift)
+else:
+    print("Unknown direction, use encrypt or decrypt")
