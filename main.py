@@ -22,10 +22,19 @@ shift = int(input("Type the shift number:\n"))
 def encrypt(plain_text, shift_amount):
     cypher_text = ""
     for letter in plain_text:
+        # determine the position of the letter in the alphabet
         position = alphabet.index(letter)
+        # determine the position of the letter after the shift amount is acounted for
         new_position = position + shift_amount
+        # determine a new position if the position is greater than the amount of letters
+        if new_position > 25:
+            # acounted for the index[0]
+            new_position = new_position - 26
+        # find the new letter
         new_letter = alphabet[new_position]
+        # add to the black cypher text
         cypher_text += new_letter
+    # print the cipher text
     print(f"The encoded text is {cypher_text}")
 
 
