@@ -13,12 +13,8 @@ def caesar(plain_text, shift_amount, cipher_direction):
         # create a negative shift for decode
         shift_amount *= -1
     for character in plain_text:
+        # starts the if statement only if the entered character is in the alphabet
         if character in alphabet:
-            # TODO-3: if the user enters a number/symbol/space?
-            # fix the code to keep the number/symbol/space when the text is encoded/decoded?
-            #e.g. start_text = "meet me at 3"
-            #end_text = "•••• •• •• 3"
-
             # determine the position of the letter in the alphabet
             position = alphabet.index(character)
             # determine the position of the letter in the alphabet then add the shift amount
@@ -28,6 +24,7 @@ def caesar(plain_text, shift_amount, cipher_direction):
                 new_position = new_position - 26
             # find the new letter
             cypher_text += alphabet[new_position]
+        # else the character is skipped and added to the cypher text
         else:
             cypher_text += character
     print(f"The {cipher_direction} text is {cypher_text}:\n")
