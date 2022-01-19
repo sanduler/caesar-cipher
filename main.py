@@ -13,19 +13,18 @@ shift = int(input("Type the shift number:\n"))
 
 def caesar(plain_text, shift_amount, cipher_direction):
     cypher_text = ""
+    # if the user selects to decode the message
+    if cipher_direction == "decode":
+        # create a negative shift for decode
+        shift_amount *= -1
     for letter in plain_text:
-        shif = shift_amount
         # determine the position of the letter in the alphabet
         position = alphabet.index(letter)
-        if cipher_direction == "decode":
-            # create a negative shift for decode
-            shif *= -1
         # determine the position of the letter in the alphabet then add the shift amount
-        new_position = position + shif
+        new_position = position + shift_amount
         if new_position > 25:
             # acounted for the index[0]
             new_position = new_position - 26
-
         # find the new letter
         cypher_text += alphabet[new_position]
     print(f"The {cipher_direction} text is {cypher_text}")
