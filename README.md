@@ -29,7 +29,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Hangman Game</h3>
+<h3 align="center">Caesar Cipher</h3>
 
   <p align="Caesar Cipher">
     Caesar cipher is one of simplest and most renown encrypting techniques. In like in the original Caesar cipher each letter in teh plain text is replaced by a letter by a fixed number of digits. This program also takes into account symbols and spaces. In this program the user is asked if they want to "encrypt" or "decrypt" the plain text. Then the program will ask the user to enter the shift amount. The program then will shift the text based on the shift amount and output the encrypted text. The program concludes by asking if they want to "encrypt" or "decrypt" again.
