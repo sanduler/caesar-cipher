@@ -5,15 +5,6 @@
 from logo import background
 print(background)
 
-# list of the letters in the alphabet
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-            'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-shift = shift % 26
-
 
 def caesar(plain_text, shift_amount, cipher_direction):
     cypher_text = ""
@@ -39,11 +30,20 @@ def caesar(plain_text, shift_amount, cipher_direction):
             cypher_text += alphabet[new_position]
         else:
             cypher_text += character
-    print(f"The {cipher_direction} text is {cypher_text}")
+    print(f"The {cipher_direction} text is {cypher_text}:\n")
 
 
-# TODO-4: Figure out a way to ask the user if they want to restart the cipher program?
-# e.g. Type 'yes' if you want to go again. Otherwise type 'no'.
-# If they type 'yes' then ask them for the direction/text/shift again and call the caesar() function again?
-# Hint: Try creating a while loop that continues to execute the program if the user types 'yes'.
-caesar(plain_text=text, shift_amount=shift, cipher_direction=direction)
+while True:
+    # list of the letters in the alphabet
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+                'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    shift = shift % 26
+    caesar(plain_text=text, shift_amount=shift, cipher_direction=direction)
+    again = input(
+        "Type 'yes' if you want to continue. Otherwise type 'no' to stop.\n").lower()
+    if again != 'yes':
+        break
